@@ -18,7 +18,7 @@ function School(name, minYears) {
     }
   };
 
-  this.getTeacherList = function () {
+  getTeacherList = function () {
     return [
       "А. С. Иванов",
       "В. С. Петров",
@@ -26,9 +26,9 @@ function School(name, minYears) {
     ];
   }
 
-  this.getTeacher = function () {
+  getTeacher = function () {
     let id = Math.floor(Math.random() * Math.floor(this.getTeacherList().length))
-    return this.getTeacherList()[id];
+    return getTeacherList()[id];
   };
 
   this.welcome = function (name, years) {
@@ -58,11 +58,10 @@ function School(name, minYears) {
       return alert(`Вам запрещено водить авто, вам должно быть ${this.MIN_YEARS} лет или больше`);
     }
 
-    const TEACHER_NAME = this.getTeacher();
+    const TEACHER_NAME = getTeacher();
 
     alert(`Ваш преподаватель: ${TEACHER_NAME}\n\nЖдём вас по адресу: ${SCHOOL_ADDRESS}`);
   };
-
 }
 
 var autoSchool = new School('Парус', 18);
